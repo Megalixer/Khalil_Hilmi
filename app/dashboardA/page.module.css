@@ -1,0 +1,215 @@
+        .body{
+          margin:0;
+          background-color: #ffffff;
+          font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+          color: #0f172a;
+          -webkit-font-smoothing:antialiased;
+        }
+
+:root{
+          --primary: #0eb026;
+          --primary-dark: #0a6f1a;
+          --muted: #6b7280;
+          --card-bg: #ffffff;
+          --max-width: 1100px;
+          --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.08);
+          --shadow-md: 0 8px 20px rgba(15, 23, 42, 0.12);
+          --shadow-lg: 0 16px 40px rgba(15, 23, 42, 0.14);
+        }
+
+        .container1{
+          background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+          color: #fff;
+          width:100%;
+          padding:14px 28px;
+          box-sizing:border-box;
+          display:flex;
+          align-items:center;
+          gap:12px;
+          box-shadow: var(--shadow-sm);
+        }
+
+        .title{font-weight:800; font-size:18px; margin:0; letter-spacing:0.3px}
+        .image{width:36px; height:36px; object-fit:contain}
+
+        .navbar{
+          background: transparent;
+          padding:12px 28px;
+          box-shadow: var(--shadow-sm);
+          display:flex;
+          align-items:center;
+          justify-content:space-between;
+          gap:12px;
+          transition: all 0.3s ease;
+        }
+        .navText{color:#fff; margin:0; font-size:14px}
+        .navLinks{display:flex; gap:10px; align-items:center}
+        .link{
+          display:inline-block;
+          background:transparent;
+          color:#fff;
+          padding:8px 14px;
+          border-radius:8px;
+          text-decoration:none;
+          font-size:13px;
+          transition: background .15s ease, transform .06s ease;
+        }
+        .link:hover{background:rgba(255,255,255,0.08); transform:translateY(-1px)}
+
+        .container{
+          width:100%;
+          min-height:56vh;
+          background-image: url('/Rectangle%201.png');
+          background-size:cover;
+          background-position:center;
+          display:flex;
+          align-items:center;
+          padding:56px 28px;
+          color: #fff;
+          box-sizing:border-box;
+        }
+        .container > *{max-width:var(--max-width)}
+        .h1{font-size:20px; margin:0 0 12px 0; line-height:1.05}
+        .p{font-size:14px; margin:0; color: rgba(255,255,255,0.9)}
+
+        .container2{padding:48px 28px; color: #0f172a}
+        .container3{
+          background:linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+          color:#fff;
+          text-align:center;
+          padding:28px 28px;
+          box-shadow:var(--shadow-md);
+        }
+
+        .containerRow{display:flex; gap:18px; margin:28px auto; justify-content:center; flex-wrap:wrap; align-items:flex-start; max-width:var(--max-width)}
+
+        .container4{
+          width:260px;
+          min-height:120px;
+          background:var(--card-bg);
+          border-radius:10px;
+          box-shadow:0 6px 18px rgba(11,22,15,0.06);
+          padding:18px;
+          box-sizing:border-box;
+          display:flex;
+          flex-direction:column;
+          justify-content:center;
+          align-items:center;
+          transition: transform .15s ease, box-shadow .15s ease;
+        }
+        .container4:hover{transform:translateY(-6px); box-shadow:0 14px 28px rgba(11,22,15,0.08)}
+        .h2{font-size:14px; margin:0 0 6px 0}
+
+        .container5{padding:24px 28px; background:#f3f4f6; border-radius:8px; margin:12px 28px}
+
+        .container6 {
+          width:100%;
+          max-width:520px;
+          margin:32px auto;
+          background: #ffffff;
+          padding:28px;
+          border-radius:12px;
+          box-shadow:0 8px 24px rgba(15,23,42,0.08);
+          box-sizing:border-box;
+          color:var(--primary-dark);
+        }
+        .image1{width:100px; height:100px; object-fit:cover; border-radius:8px}
+
+        @media (max-width:900px){
+          .h1{font-size:22px}
+          .container{padding:40px 20px}
+          .container1,.navbar{padding:12px 16px}
+        }
+
+        @media (max-width:640px){
+          .container{min-height:auto; padding:28px 16px; text-align:center}
+          .container > *{width:100%}
+          .containerRow{flex-direction:column; gap:14px; margin:18px}
+          .container4{width:100%; max-width:520px}
+          .navText{display:none}
+          .link{padding:8px 10px}
+        }
+
+        /* utility tweaks */
+        .p1{font-size:12px; margin:0; color:var(--muted)}
+
+        /* Data Display Styles */
+        .dataContainer{
+          width:100%;
+          max-width:900px;
+          margin:40px auto;
+          padding:40px 28px;
+          background: #ffffff;
+          border-radius:14px;
+          box-shadow:var(--shadow-md);
+          box-sizing:border-box;
+        }
+
+        .dataTitle{
+          font-size:24px;
+          font-weight:800;
+          margin:0 0 32px 0;
+          color:#0f172a;
+          text-align:center;
+        }
+
+        .dataGrid{
+          display:grid;
+          grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+          gap:24px;
+          margin-top:20px;
+        }
+
+        .dataItem{
+          display:flex;
+          flex-direction:column;
+          gap:8px;
+          padding:16px;
+          background:#f9fafb;
+          border-radius:10px;
+          border-left:4px solid var(--primary);
+        }
+
+        .dataLabel{
+          font-size:12px;
+          font-weight:700;
+          color:var(--muted);
+          text-transform:uppercase;
+          letter-spacing:0.5px;
+        }
+
+        .dataValue{
+          font-size:16px;
+          font-weight:600;
+          color:#0f172a;
+          word-break:break-word;
+        }
+
+        .section{
+          margin-top:32px;
+        }
+
+        .sectionTitle{
+          font-size:16px;
+          font-weight:700;
+          color:var(--primary-dark);
+          margin:0 0 16px 0;
+          padding-bottom:8px;
+          border-bottom:2px solid var(--primary);
+        }
+
+        .emptyMessage{
+          text-align:center;
+          padding:48px 28px;
+          color:var(--muted);
+          font-size:16px;
+        }
+
+        @media (max-width:640px){
+          .dataContainer{
+            margin:24px 12px;
+            padding:24px 16px;
+          }
+          .dataTitle{font-size:20px; margin-bottom:24px}
+          .dataGrid{grid-template-columns:1fr; gap:16px}
+        }
