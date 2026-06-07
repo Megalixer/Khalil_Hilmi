@@ -3,7 +3,7 @@ import mysql from 'mysql2/promise';
 export async function POST(request) {
     try {
         // Check environment variables
-        if (!process.env.DATABASE_HOST || !process.env.DATABASE_USER || !process.env.DATABASE_NAME) {
+        if (!process.env.DATABASE_HOST || !process.env.DATABASE_USER || !process.env.DATABASE_NAME || !process.env.DATABASE_PASSWORD || !process.env.DATABASE_PORT) {
             console.error('Missing database environment variables');
             return Response.json(
                 { 
