@@ -211,7 +211,7 @@ export default function Register() {
                   boxSizing: 'border-box'
                 }} value={jurusan} onChange={(e) => setJurusan(e.target.value)}>
                     <option value="">Pilih Jurusan</option>
-                    <option value="PPLG">Rekayasa Perangkat Lunak</option>
+                    <option value="PPLG">Pengembangan Perangkat Lunak dan Game</option>
                     <option value="TKJ">Teknik Komputer Jaringan</option>
                     <option value="DKV">Desain Komunikasi Visual</option>
                 </select>

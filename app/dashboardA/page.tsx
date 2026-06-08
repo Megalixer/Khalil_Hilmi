@@ -138,7 +138,7 @@ export default function DashboardA() {
               localStorage.removeItem('user');
               localStorage.removeItem('userNik');
               localStorage.removeItem('userNisn');
-              router.push('/home');
+              router.push('/app');
             }}
             style={{
               padding: '8px 16px',
