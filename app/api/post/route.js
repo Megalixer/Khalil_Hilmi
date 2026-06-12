@@ -1,6 +1,7 @@
 import mysql from 'mysql2/promise';
 import { writeFile, mkdir } from 'fs/promises';
 import { join } from 'path';
+import cloudinary from '@/lib/cloudinary';
 
 export async function POST(request) {
     let connection = null;
@@ -53,8 +54,31 @@ export async function POST(request) {
         }
 
         // Save file
-        const uploadsDir = join(process.cwd(), 'public/uploads');
-        await mkdir(uploadsDir, { recursive: true });
+        export async function POST(req) {
+  try {
+    const formData = await req.formData();
+    const file = formData.get('file'); // atau nama field form kamu
+
+    // Convert file ke base64
+    const bytes = await file.arrayBuffer();
+    const buffer = Buffer.from(bytes);
+    const base64 = `data:${file.type};base64,${buffer.toString('base64')}`;
+
+    // Upload ke Cloudinary
+    const result = await cloudinary.uploader.upload(base64, {
+      folder: 'registrations', // folder di Cloudinary
+    });
+
+    // Simpan URL ke database
+    const imageUrl = result.secure_url;
+
+    // ... lanjutkan simpan ke MySQL
+    return Response.json({ success: true, imageUrl });
+
+  } catch (err) {
+    return Response.json({ error: err.message }, { status: 500 });
+  }
+}
 
         const filename = `${String(nik).trim()}-${Date.now()}.pdf`;
         const filepath = join(uploadsDir, filename);
